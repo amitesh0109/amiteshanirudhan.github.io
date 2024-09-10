@@ -4,102 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amitesh Anirudhan - Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        header {
-            background-color: #f4f4f4;
-            padding: 1rem;
-            margin-bottom: 20px;
-        }
-        h1, h2 {
-            color: #2c3e50;
-        }
-        .section {
-            margin-bottom: 30px;
-        }
-        .experience-item {
-            margin-bottom: 20px;
-        }
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .skill-item {
-            background-color: #e0e0e0;
-            padding: 5px 10px;
-            border-radius: 5px;
-        }
-    </style>
+    <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <header>
-        <h1>Amitesh Anirudhan</h1>
-        <p>Project Engineer</p>
-    </header>
-
-    <main>
-        <section class="section" id="about">
-            <h2>About Me</h2>
-            <p>Driven individual with a year of experience in the corporate sector, specifically with handling data in the utility industry. Strong intuition on providing background and implementing technical solutions for KPI's related to various business processes.</p>
-            <p>As a mathematics major, a natural instinct of looking at problems in tech and business, through the lens of empirical reasoning and guesstimates has been my practice towards delivering an ideal output.</p>
-        </section>
-
-        <section class="section" id="experience">
-            <h2>Experience</h2>
-            <div class="experience-item">
-                <h3>Developer</h3>
-                <p>Wipro | Bengaluru, India | May 2022 - May 2023</p>
-                <ul>
-                    <li>Crunched data of an American utility company to provide insights on change of tenancy and supplier rates.</li>
-                    <li>Developed dashboards on Power BI and Tableau, showcasing relevant KPI's.</li>
-                    <li>Developed and converted Java code to Groovy for CIS migration projects.</li>
-                    <li>Conducted knowledge transfer sessions on Groovy.</li>
-                </ul>
-            </div>
-            <div class="experience-item">
-                <h3>Power BI Developer Intern</h3>
-                <p>Techneith | Toronto, Canada | 2021 - 2022</p>
-                <ul>
-                    <li>Developed budget and sales dashboards for clients.</li>
-                    <li>Handled and modelled required data for tasks.</li>
-                    <li>Interacted directly with clients for input and feedback.</li>
-                    <li>Conducted R&D on Power BI service and Windows server requirements.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="section" id="skills">
-            <h2>Skills</h2>
-            <div class="skills-list">
-                <span class="skill-item">Groovy</span>
-                <span class="skill-item">Java</span>
-                <span class="skill-item">Python</span>
-                <span class="skill-item">PL SQL</span>
-                <span class="skill-item">Power BI</span>
-                <span class="skill-item">Tableau</span>
-                <span class="skill-item">Excel</span>
-                <span class="skill-item">Linear algebra</span>
-                <span class="skill-item">Statistics</span>
-                <span class="skill-item">Probability</span>
-            </div>
-        </section>
-
-        <section class="section" id="contact">
-            <h2>Contact</h2>
-            <p>Email: <a href="mailto:amitesh.anirudhan29@gmail.com">amitesh.anirudhan29@gmail.com</a></p>
-            <p>Phone: <a href="tel:9618508656">9618508656</a></p>
-            <p>Location: Hyderabad, Telengana, India</p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/amitesh-anirudhan/" target="_blank">Profile</a></p>
-            <p>GitHub: <a href="https://github.com/amitesh0109" target="_blank">amitesh0109</a></p>
-        </section>
-    </main>
+    <div id="root"></div>
+    <script type="text/babel" src="App.js"></script>
 </body>
 </html>
