@@ -1,180 +1,173 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amitesh Anirudhan - Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-color: #f5f5f5;
-            --text-color: #333;
-            --accent-color: #4CAF50;
-            --grid-gap: 20px;
-        }
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-        }
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--grid-gap);
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .grid-item {
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        .grid-item.large {
-            grid-column: span 2;
-        }
-        h1, h2, h3 {
-            margin-top: 0;
-        }
-        .huge-text {
-            font-size: 4rem;
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 20px;
-        }
-        .accent-bg {
-            background-color: var(--accent-color);
-            color: white;
-        }
-        .circular-text {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 0.8rem;
-            text-align: center;
-            transform: rotate(-30deg);
-        }
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            display: flex;
-            gap: 20px;
-        }
-        nav a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 600;
-        }
-        .button {
-            background-color: var(--text-color);
-            color: var(--bg-color);
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 20px;
-        }
-        @media (max-width: 768px) {
-            .grid-item.large {
-                grid-column: span 1;
-            }
-        }
-    </style>
-</head>
-<body>
-    <nav>
-        <div>AM</div>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div>MENU +</div>
-    </nav>
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import { LinkedIn, GitHub, Mail, Phone, MapPin } from 'lucide-react';
 
-    <div class="grid-container">
-        <div class="grid-item large">
-            <h1>Design Success, One Project at a Time</h1>
-            <p>Hi, I'm Amitesh Anirudhan, Associate Consultant</p>
-            <p>Your go-to Tech Professional for elevating your project outcomes. Let's design the experience you want to see tomorrow.</p>
-        </div>
+const App = () => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
-        <div class="grid-item">
-            <h2>EST. - 2022</h2>
-            <p>Born in: Nagpur 🇮🇳</p>
-            <p>Currently: Hyderabad 🇮🇳</p>
-        </div>
-
-        <div class="grid-item accent-bg">
-            <div class="circular-text">
-                GETTING THINGS DONE EFFECTIVELY
+  return (
+    <div className={`min-h-screen ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-gradient-to-br from-blue-50 to-indigo-100 text-gray-800'}`}>
+      <header className="p-6 flex justify-between items-center">
+        <motion.h1 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-3xl font-bold"
+        >
+          Amitesh Anirudhan
+        </motion.h1>
+        <nav className="space-x-4">
+          <a href="#about" className="hover:text-indigo-600 transition-colors">About</a>
+          <a href="#experience" className="hover:text-indigo-600 transition-colors">Experience</a>
+          <a href="#skills" className="hover:text-indigo-600 transition-colors">Skills</a>
+          <a href="#projects" className="hover:text-indigo-600 transition-colors">Projects</a>
+          <a href="#contact" className="hover:text-indigo-600 transition-colors">Contact</a>
+          <button onClick={() => setIsDarkMode(!isDarkMode)} className="p-2 rounded-full bg-gray-200 dark:bg-gray-700">
+            {isDarkMode ? '🌞' : '🌙'}
+          </button>
+        </nav>
+      </header>
+      <main className="container mx-auto px-6 py-12">
+        <section id="about" className="mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+          >
+            <h2 className="text-4xl font-bold mb-6">Project Engineer</h2>
+            <p className="text-xl mb-4">
+              Driven individual with a year of experience in the corporate sector, specifically with
+              handling data in the utility industry. Strong intuition on providing background and
+              implementing technical solutions for KPI's related to various business processes.
+            </p>
+            <p className="text-xl">
+              As a mathematics major, a natural instinct of looking at problems in tech and business,
+              through the lens of empirical reasoning and guesstimates has been my practice towards
+              delivering an ideal output.
+            </p>
+          </motion.div>
+        </section>
+        
+        <section id="experience" className="mb-20">
+          <h2 className="text-3xl font-bold mb-6">Experience</h2>
+          <motion.div
+            className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+          >
+            <h3 className="text-2xl font-semibold mb-2">Developer</h3>
+            <p className="text-gray-600 dark:text-gray-300 mb-4">Wipro | Bengaluru, India | May 2022 - May 2023</p>
+            <ul className="list-disc list-inside">
+              <li>Crunched data of an American utility company to provide insights on change of tenancy and supplier rates.</li>
+              <li>Developed dashboards on Power BI and Tableau, showcasing relevant KPI's.</li>
+              <li>Developed and converted Java code to Groovy for CIS migration projects.</li>
+              <li>Conducted knowledge transfer sessions on Groovy.</li>
+            </ul>
+          </motion.div>
+          <motion.div
+            className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+          >
+            <h3 className="text-2xl font-semibold mb-2">Power BI Developer Intern</h3>
+            <p className="text-gray-600 dark:text-gray-300 mb-4">Techneith | Toronto, Canada | 2021 - 2022</p>
+            <ul className="list-disc list-inside">
+              <li>Developed budget and sales dashboards for clients.</li>
+              <li>Handled and modelled required data for tasks.</li>
+              <li>Interacted directly with clients for input and feedback.</li>
+              <li>Conducted R&D on Power BI service and Windows server requirements.</li>
+            </ul>
+          </motion.div>
+        </section>
+        
+        <section id="skills" className="mb-20">
+          <h2 className="text-3xl font-bold mb-6">Skills</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {['Groovy', 'Java', 'Python', 'PL SQL', 'Power BI', 'Tableau', 'Excel', 'Linear algebra', 'Statistics', 'Probability'].map((skill, index) => (
+              <motion.div
+                key={skill}
+                className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <h3 className="text-xl font-semibold mb-2">{skill}</h3>
+                <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                  <div className="bg-indigo-600 h-2.5 rounded-full" style={{ width: `${75 + Math.random() * 25}%` }}></div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+        
+        <section id="projects" className="mb-20">
+          <h2 className="text-3xl font-bold mb-6">Project Portfolio</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <motion.div
+              className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+            >
+              <h3 className="text-2xl font-semibold mb-2">Factor Analysis</h3>
+              <p>Conducted on a multidimensional dataset, includes data regarding different cereal brands, and output of questions that were asked in a survey.</p>
+              <p className="mt-2"><strong>Tools:</strong> Python, SQL</p>
+            </motion.div>
+            <motion.div
+              className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+            >
+              <h3 className="text-2xl font-semibold mb-2">Exploring the Crypto-market</h3>
+              <p>Analyzed trends in market cap of Bitcoin and other cryptocurrencies. Project details available on GitHub.</p>
+              <p className="mt-2"><strong>Tools:</strong> Python</p>
+            </motion.div>
+            <motion.div
+              className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.4 }}
+            >
+              <h3 className="text-2xl font-semibold mb-2">Dashboard Development</h3>
+              <p>Developed and maintained analytics for a mid-size US company on their budget and sales data.</p>
+              <p className="mt-2"><strong>Tools:</strong> Power BI, SQL</p>
+            </motion.div>
+          </div>
+        </section>
+        
+        <section id="contact">
+          <h2 className="text-3xl font-bold mb-6">Contact</h2>
+          <motion.div
+            className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+          >
+            <div className="flex items-center mb-4">
+              <Mail className="mr-2" /> <a href="mailto:amitesh.anirudhan29@gmail.com" className="hover:text-indigo-600">amitesh.anirudhan29@gmail.com</a>
             </div>
-            <p>2X Project Lead</p>
-        </div>
-
-        <div class="grid-item">
-            <img src="/api/placeholder/300/300" alt="Amitesh Anirudhan" style="width:100%; height:auto; border-radius:10px;">
-        </div>
-
-        <div class="grid-item">
-            <p>49.1579° N 121.9515° W</p>
-            <p>15:36 IST</p>
-        </div>
-
-        <div class="grid-item large accent-bg">
-            <div class="huge-text">INNOVATIVE. ANALYTICAL. PROFESSIONAL. TEAM PLAYER.</div>
-        </div>
-
-        <div class="grid-item">
-            <p>For the last 2 years, I've played multiple roles. From a Scholar Trainee at Wipro to an Associate Consultant at RIA Advisory. In that time, I've learned one main lesson: when your approach is efficient, you can do more impactful work.</p>
-            <p>And whether that "impactful work" is developing APIs, conducting cohort-based sessions, or providing the best service in the industry, I want to help you achieve it.</p>
-            <p>Let's work together to create a bigger impact in your business and elevate your projects.</p>
-            <a href="#contact" class="button">Get in Touch</a>
-        </div>
-
-        <div id="experience" class="grid-item">
-            <h2>Experience</h2>
-            <h3>Associate Consultant, RIA Advisory LLP</h3>
-            <p>Hyderabad, India | May 2023 - Present</p>
-            <ul>
-                <li>OUAF related activities</li>
-                <li>Stakeholder communication</li>
-                <li>API development</li>
-            </ul>
-        </div>
-
-        <div id="skills" class="grid-item">
-            <h2>Skills</h2>
-            <ul>
-                <li>Java</li>
-                <li>Groovy</li>
-                <li>Python (Pandas, Numpy, Matplotlib)</li>
-                <li>Power BI</li>
-                <li>SQL</li>
-                <li>Technical Design</li>
-            </ul>
-        </div>
-
-        <div id="contact" class="grid-item">
-            <h2>Contact</h2>
-            <p>Email: amitesh.anirudhan29@gmail.com</p>
-            <p>Phone: +919618508656</p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/amitesh-anirudhan/" target="_blank">Profile</a></p>
-            <p>Blog: <a href="#" target="_blank">QuikDeets</a></p>
-        </div>
+            <div className="flex items-center mb-4">
+              <Phone className="mr-2" /> <a href="tel:9618508656" className="hover:text-indigo-600">9618508656</a>
+            </div>
+            <div className="flex items-center mb-4">
+              <MapPin className="mr-2" /> Hyderabad, Telengana, India
+            </div>
+            <div className="flex space-x-4 mt-4">
+              <a href="https://www.linkedin.com/in/amitesh-anirudhan/" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-800">
+                <LinkedIn />
+              </a>
+              <a href="https://github.com/yourgithub" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-800">
+                <GitHub />
+              </a>
+            </div>
+          </motion.div>
+        </section>
+      </main>
     </div>
-</body>
-</html>
+  );
+};
+
+export default App;
