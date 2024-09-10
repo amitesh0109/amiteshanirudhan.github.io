@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amitesh Anirudhan - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f5f5f5;
+            --text-color: #333;
+            --accent-color: #4CAF50;
+            --grid-gap: 20px;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--grid-gap);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .grid-item {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .grid-item.large {
+            grid-column: span 2;
+        }
+        h1, h2, h3 {
+            margin-top: 0;
+        }
+        .huge-text {
+            font-size: 4rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        .accent-bg {
+            background-color: var(--accent-color);
+            color: white;
+        }
+        .circular-text {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.8rem;
+            text-align: center;
+            transform: rotate(-30deg);
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+        }
+        .button {
+            background-color: var(--text-color);
+            color: var(--bg-color);
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        @media (max-width: 768px) {
+            .grid-item.large {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div>AM</div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div>MENU +</div>
+    </nav>
+
+    <div class="grid-container">
+        <div class="grid-item large">
+            <h1>Design Success, One Project at a Time</h1>
+            <p>Hi, I'm Amitesh Anirudhan, Associate Consultant</p>
+            <p>Your go-to Tech Professional for elevating your project outcomes. Let's design the experience you want to see tomorrow.</p>
+        </div>
+
+        <div class="grid-item">
+            <h2>EST. - 2022</h2>
+            <p>Born in: Nagpur 🇮🇳</p>
+            <p>Currently: Hyderabad 🇮🇳</p>
+        </div>
+
+        <div class="grid-item accent-bg">
+            <div class="circular-text">
+                GETTING THINGS DONE EFFECTIVELY
+            </div>
+            <p>2X Project Lead</p>
+        </div>
+
+        <div class="grid-item">
+            <img src="/api/placeholder/300/300" alt="Amitesh Anirudhan" style="width:100%; height:auto; border-radius:10px;">
+        </div>
+
+        <div class="grid-item">
+            <p>49.1579° N 121.9515° W</p>
+            <p>15:36 IST</p>
+        </div>
+
+        <div class="grid-item large accent-bg">
+            <div class="huge-text">INNOVATIVE. ANALYTICAL. PROFESSIONAL. TEAM PLAYER.</div>
+        </div>
+
+        <div class="grid-item">
+            <p>For the last 2 years, I've played multiple roles. From a Scholar Trainee at Wipro to an Associate Consultant at RIA Advisory. In that time, I've learned one main lesson: when your approach is efficient, you can do more impactful work.</p>
+            <p>And whether that "impactful work" is developing APIs, conducting cohort-based sessions, or providing the best service in the industry, I want to help you achieve it.</p>
+            <p>Let's work together to create a bigger impact in your business and elevate your projects.</p>
+            <a href="#contact" class="button">Get in Touch</a>
+        </div>
+
+        <div id="experience" class="grid-item">
+            <h2>Experience</h2>
+            <h3>Associate Consultant, RIA Advisory LLP</h3>
+            <p>Hyderabad, India | May 2023 - Present</p>
+            <ul>
+                <li>OUAF related activities</li>
+                <li>Stakeholder communication</li>
+                <li>API development</li>
+            </ul>
+        </div>
+
+        <div id="skills" class="grid-item">
+            <h2>Skills</h2>
+            <ul>
+                <li>Java</li>
+                <li>Groovy</li>
+                <li>Python (Pandas, Numpy, Matplotlib)</li>
+                <li>Power BI</li>
+                <li>SQL</li>
+                <li>Technical Design</li>
+            </ul>
+        </div>
+
+        <div id="contact" class="grid-item">
+            <h2>Contact</h2>
+            <p>Email: amitesh.anirudhan29@gmail.com</p>
+            <p>Phone: +919618508656</p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/amitesh-anirudhan/" target="_blank">Profile</a></p>
+            <p>Blog: <a href="#" target="_blank">QuikDeets</a></p>
+        </div>
+    </div>
+</body>
+</html>
