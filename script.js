@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     }
 
-    typeWriter("Transforming data into insights, code into solutions.", 0);
+    typeWriter("It’s not about building blocks anymore; it’s about how you stack them.", 0);
 
     // Back to Top button functionality
     window.onscroll = function() {scrollFunction()};
