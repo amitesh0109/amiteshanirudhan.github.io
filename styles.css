@@ -1,32 +1,10 @@
-:root {
-    --primary-color: #6200ea;
-    --secondary-color: #03dac6;
-    --bg-color: #121212;
-    --text-color: #ffffff;
-}
-
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    overflow-x: hidden;
-    background-color: rgba(18, 18, 18, 0.8);
-}
-
-#background-animation {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    opacity: 0.1;
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
+    color: #ffffff;
+    background-color: rgba(18, 18, 18, 0.7);
 }
 
 #bg-canvas {
@@ -38,123 +16,29 @@ body {
     z-index: -1;
 }
 
-#root {
+#content {
     position: relative;
     z-index: 1;
-}
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    color: #ffffff;
-    background-color: rgba(18, 18, 18, 0.7); /* Slightly transparent dark background */
-}
-
-/* Keep all your other existing styles */
-
-@keyframes gradientBG {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-nav {
-    position: fixed;
-    top: 50%;
-    right: 2rem;
-    transform: translateY(-50%);
-    z-index: 1000;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-nav li {
-    margin: 1rem 0;
-}
-
-nav a {
-    color: var(--text-color);
-    text-decoration: none;
-    font-size: 1.2rem;
-    transition: color 0.3s ease;
-}
-
-nav li.active a {
-    color: var(--secondary-color);
-}
-
-main {
     max-width: 800px;
     margin: 0 auto;
     padding: 2rem;
 }
 
-section {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+header {
+    text-align: center;
+    padding: 2rem 0;
 }
 
 h1, h2, h3 {
-    color: var(--secondary-color);
+    color: #03dac6;
 }
 
-.hero {
-    text-align: center;
+section {
+    margin-bottom: 3rem;
 }
 
-.hero h1 {
-    font-size: 4rem;
-    margin-bottom: 0;
-}
-
-.hero h2 {
-    font-size: 2rem;
-    margin-top: 0;
-    color: var(--primary-color);
-}
-
-.timeline {
-    position: relative;
-    padding-left: 2rem;
-}
-
-.timeline::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background-color: var(--primary-color);
-}
-
-.timeline-item {
-    position: relative;
+.job {
     margin-bottom: 2rem;
-}
-
-.timeline-item::before {
-    content: '';
-    position: absolute;
-    left: -2.5rem;
-    top: 0;
-    width: 1rem;
-    height: 1rem;
-    border-radius: 50%;
-    background-color: var(--secondary-color);
 }
 
 .skills-container {
@@ -164,8 +48,8 @@ h1, h2, h3 {
 }
 
 .skill-tag {
-    background-color: var(--primary-color);
-    color: var(--text-color);
+    background-color: #6200ea;
+    color: #ffffff;
     padding: 0.5rem 1rem;
     border-radius: 20px;
     transition: transform 0.2s ease, background-color 0.2s ease;
@@ -173,63 +57,5 @@ h1, h2, h3 {
 
 .skill-tag:hover {
     transform: scale(1.05);
-    background-color: var(--secondary-color);
+    background-color: #03dac6;
 }
-
-.fade-in-section {
-    opacity: 0;
-    transform: translateY(20vh);
-    visibility: hidden;
-    transition: opacity 1200ms ease-out, transform 600ms ease-out,
-        visibility 1200ms ease-out;
-    will-change: opacity, transform, visibility;
-}
-
-.fade-in-section.visible {
-    opacity: 1;
-    transform: none;
-    visibility: visible;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.hero h1, .hero h2, .hero p {
-    animation: fadeInUp 0.8s ease-out forwards;
-    opacity: 0;
-}
-
-.hero h1 { animation-delay: 0.2s; }
-.hero h2 { animation-delay: 0.4s; }
-.hero p { animation-delay: 0.6s; }
-
-@media (max-width: 768px) {
-    nav {
-        position: static;
-        transform: none;
-        padding: 1rem;
-        background-color: var(--bg-color);
-    }
-
-    nav ul {
-        display: flex;
-        justify-content: space-around;
-    }
-
-    nav li {
-        margin: 0;
-    }
-
-    main {
-        padding-top: 4rem;
-    }
-}
-
