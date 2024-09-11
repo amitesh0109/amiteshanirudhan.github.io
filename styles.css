@@ -1,12 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
 :root {
-    --primary-color: #00ffff;
-    --secondary-color: #ff00ff;
-    --bg-color: #000000;
+    --primary-color: #00ffff; /* Cyan */
+    --secondary-color: #ff00ff; /* Magenta */
+    --accent-color: #ffff00; /* Yellow */
+    --bg-color: #0a0a0a; /* Very dark gray */
     --text-color: #ffffff;
-    --card-bg: rgba(255, 255, 255, 0.1);
+    --card-bg: rgba(255, 255, 255, 0.05);
 }
+
+/* Update other color references in your CSS accordingly */
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -17,6 +20,8 @@ body {
     background-color: var(--bg-color);
     overflow-x: hidden;
 }
+
+/* Update other color references in your CSS accordingly */
 
 #bg-canvas {
     position: fixed;
