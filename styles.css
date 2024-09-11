@@ -1,37 +1,45 @@
 :root {
-    --bg-color: #ffffff;
-    --text-color: #333333;
-    --header-bg: #f4f4f4;
-    --skill-bg: #e0e0e0;
+    --primary-color: #6200ea;
+    --secondary-color: #03dac6;
+    --bg-color: #121212;
+    --text-color: #ffffff;
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
     background-color: var(--bg-color);
     color: var(--text-color);
-    transition: background-color 0.3s, color 0.3s;
 }
 
-.dark-mode {
-    --bg-color: #1a1a1a;
-    --text-color: #ffffff;
-    --header-bg: #2c2c2c;
-    --skill-bg: #3a3a3a;
-}
-
-header {
-    background-color: var(--header-bg);
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
+nav {
+    position: fixed;
+    top: 50%;
+    right: 2rem;
+    transform: translateY(-50%);
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav li {
+    margin: 1rem 0;
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+nav li.active a {
+    color: var(--secondary-color);
 }
 
 main {
@@ -40,88 +48,100 @@ main {
     padding: 2rem;
 }
 
+section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 h1, h2, h3 {
-    color: var(--text-color);
+    color: var(--secondary-color);
 }
 
-.mode-toggle {
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: transform 0.3s;
+.hero {
+    text-align: center;
 }
 
-.mode-toggle:hover {
-    transform: scale(1.1);
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 0;
 }
 
-.fade-in-section {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+.hero h2 {
+    font-size: 2rem;
+    margin-top: 0;
+    color: var(--primary-color);
 }
 
-.fade-in-section.fade-in {
-    opacity: 1;
-    transform: translateY(0);
+.timeline {
+    position: relative;
+    padding-left: 2rem;
 }
 
-.job {
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--primary-color);
+}
+
+.timeline-item {
+    position: relative;
     margin-bottom: 2rem;
-    padding: 1rem;
-    border-left: 3px solid var(--text-color);
-    transition: border-color 0.3s;
 }
 
-.job:hover {
-    border-left-color: #4CAF50;
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2.5rem;
+    top: 0;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
 }
 
 .skills-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 1rem;
 }
 
 .skill-tag {
-    background-color: var(--skill-bg);
+    background-color: var(--primary-color);
+    color: var(--text-color);
     padding: 0.5rem 1rem;
     border-radius: 20px;
-    transition: background-color 0.3s, transform 0.2s;
+    transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
 .skill-tag:hover {
     transform: scale(1.05);
-}
-
-section {
-    margin-bottom: 3rem;
-}
-
-#hero {
-    text-align: center;
-    padding: 4rem 0;
-}
-
-.ai-graphic {
-    width: 200px;
-    height: 200px;
-    margin: 0 auto 2rem;
-    background-color: var(--skill-bg);
-    border-radius: 50%;
-    overflow: hidden;
+    background-color: var(--secondary-color);
 }
 
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
+    nav {
+        position: static;
+        transform: none;
+        padding: 1rem;
+        background-color: var(--bg-color);
     }
 
-    .mode-toggle {
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
+    nav ul {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    nav li {
+        margin: 0;
+    }
+
+    main {
+        padding-top: 4rem;
     }
 }
