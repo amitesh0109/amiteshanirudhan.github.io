@@ -8,108 +8,14 @@
     <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
-    <div id="background-animation"></div>
+    <canvas id="bg-canvas"></canvas>
     <div id="root"></div>
+    <script src="background.js"></script>
     <script type="text/babel">
-        const App = () => {
-            const [activeSection, setActiveSection] = React.useState('home');
-
-            const handleScroll = () => {
-                const sections = ['home', 'about', 'experience', 'skills'];
-                const current = sections.find(section => {
-                    const element = document.getElementById(section);
-                    const rect = element.getBoundingClientRect();
-                    return rect.top <= 150 && rect.bottom >= 150;
-                });
-                setActiveSection(current);
-            };
-
-            React.useEffect(() => {
-                window.addEventListener('scroll', handleScroll);
-
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('visible');
-                        } else {
-                            entry.target.classList.remove('visible');
-                        }
-                    });
-                }, { threshold: 0.1 });
-
-                document.querySelectorAll('.fade-in-section').forEach(section => {
-                    observer.observe(section);
-                });
-
-                return () => {
-                    window.removeEventListener('scroll', handleScroll);
-                    observer.disconnect();
-                };
-            }, []);
-
-            return (
-                <div>
-                    <nav>
-                        <ul>
-                            {['Home', 'About', 'Experience', 'Skills'].map(item => (
-                                <li key={item} className={activeSection === item.toLowerCase() ? 'active' : ''}>
-                                    <a href={`#${item.toLowerCase()}`}>{item}</a>
-                                </li>
-                            ))}
-                        </ul>
-                    </nav>
-                    <main>
-                        <section id="home" className="hero fade-in-section">
-                            <h1>Amitesh Anirudhan</h1>
-                            <h2>Project Engineer</h2>
-                            <p>Transforming data into insights, code into solutions.</p>
-                        </section>
-                        <section id="about" className="fade-in-section">
-                            <h2>About Me</h2>
-                            <p>Driven individual with a year of experience in the corporate sector, specifically with handling data in the utility industry. Strong intuition on providing background and implementing technical solutions for KPI's related to various business processes.</p>
-                            <p>As a mathematics major, a natural instinct of looking at problems in tech and business, through the lens of empirical reasoning and guesstimates has been my practice towards delivering an ideal output.</p>
-                        </section>
-                        <section id="experience" className="fade-in-section">
-                            <h2>Experience</h2>
-                            <div className="timeline">
-                                <div className="timeline-item">
-                                    <h3>Developer</h3>
-                                    <p>Wipro | Bengaluru, India | May 2022 - May 2023</p>
-                                    <ul>
-                                        <li>Crunched data of an American utility company to provide insights on change of tenancy and supplier rates.</li>
-                                        <li>Developed dashboards on Power BI and Tableau, showcasing relevant KPI's.</li>
-                                        <li>Developed and converted Java code to Groovy for CIS migration projects.</li>
-                                        <li>Conducted knowledge transfer sessions on Groovy.</li>
-                                    </ul>
-                                </div>
-                                <div className="timeline-item">
-                                    <h3>Power BI Developer Intern</h3>
-                                    <p>Techneith | Toronto, Canada | 2021 - 2022</p>
-                                    <ul>
-                                        <li>Developed budget and sales dashboards for clients.</li>
-                                        <li>Handled and modelled required data for tasks.</li>
-                                        <li>Interacted directly with clients for input and feedback.</li>
-                                        <li>Conducted R&D on Power BI service and Windows server requirements.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </section>
-                        <section id="skills" className="fade-in-section">
-                            <h2>Skills</h2>
-                            <div className="skills-container">
-                                {['Groovy', 'Java', 'Python', 'PL SQL', 'Power BI', 'Tableau', 'Excel', 'Linear algebra', 'Statistics', 'Probability'].map((skill, index) => (
-                                    <span key={index} className="skill-tag">{skill}</span>
-                                ))}
-                            </div>
-                        </section>
-                    </main>
-                </div>
-            );
-        };
-
-        ReactDOM.render(<App />, document.getElementById('root'));
+        // Your existing React code here...
     </script>
 </body>
 </html>
