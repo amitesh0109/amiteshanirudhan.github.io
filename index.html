@@ -5,23 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amitesh Anirudhan - Project Engineer</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
     <canvas id="bg-canvas"></canvas>
-    <div id="root"></div>
+    <div id="content">
+        <header>
+            <h1>Amitesh Anirudhan</h1>
+            <h2>Project Engineer</h2>
+        </header>
+        <main>
+            <section id="about">
+                <h2>About Me</h2>
+                <p>Driven individual with a year of experience in the corporate sector, specifically with handling data in the utility industry. Strong intuition on providing background and implementing technical solutions for KPI's related to various business processes.</p>
+                <p>As a mathematics major, a natural instinct of looking at problems in tech and business, through the lens of empirical reasoning and guesstimates has been my practice towards delivering an ideal output.</p>
+            </section>
+            <section id="experience">
+                <h2>Experience</h2>
+                <div class="job">
+                    <h3>Developer</h3>
+                    <p>Wipro | Bengaluru, India | May 2022 - May 2023</p>
+                    <ul>
+                        <li>Crunched data of an American utility company to provide insights on change of tenancy and supplier rates.</li>
+                        <li>Developed dashboards on Power BI and Tableau, showcasing relevant KPI's.</li>
+                        <li>Developed and converted Java code to Groovy for CIS migration projects.</li>
+                        <li>Conducted knowledge transfer sessions on Groovy.</li>
+                    </ul>
+                </div>
+                <div class="job">
+                    <h3>Power BI Developer Intern</h3>
+                    <p>Techneith | Toronto, Canada | 2021 - 2022</p>
+                    <ul>
+                        <li>Developed budget and sales dashboards for clients.</li>
+                        <li>Handled and modelled required data for tasks.</li>
+                        <li>Interacted directly with clients for input and feedback.</li>
+                        <li>Conducted R&D on Power BI service and Windows server requirements.</li>
+                    </ul>
+                </div>
+            </section>
+            <section id="skills">
+                <h2>Skills</h2>
+                <div class="skills-container">
+                    <span class="skill-tag">Groovy</span>
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">PL SQL</span>
+                    <span class="skill-tag">Power BI</span>
+                    <span class="skill-tag">Tableau</span>
+                    <span class="skill-tag">Excel</span>
+                    <span class="skill-tag">Linear algebra</span>
+                    <span class="skill-tag">Statistics</span>
+                    <span class="skill-tag">Probability</span>
+                </div>
+            </section>
+        </main>
+    </div>
     <script src="background.js"></script>
-    <script type="text/babel">
-        // Your React component code should be here
-        // Make sure it's not commented out or removed
-        const App = () => {
-            // ... (your existing React component code)
-        };
-
-        ReactDOM.render(<App />, document.getElementById('root'));
-    </script>
 </body>
 </html>
