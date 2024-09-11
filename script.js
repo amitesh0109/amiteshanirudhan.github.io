@@ -53,6 +53,42 @@ document.addEventListener('DOMContentLoaded', (event) => {
         document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     };
 
+    // Add these functions to your existing script.js
+
+// Parallax effect
+window.addEventListener('scroll', () => {
+    const parallaxBg = document.querySelector('.parallax-bg');
+    let scrollPosition = window.pageYOffset;
+    parallaxBg.style.transform = 'translateY(' + scrollPosition * 0.5 + 'px)';
+});
+
+// Theme toggle
+const themeToggle = document.getElementById('themeToggle');
+themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('light-theme');
+    themeToggle.textContent = document.body.classList.contains('light-theme') ? '🌙' : '☀️';
+});
+
+// Interactive skills
+document.querySelectorAll('.skill-tag').forEach(skill => {
+    skill.addEventListener('mouseover', () => {
+        skill.style.transform = `scale(1.1) rotate(${Math.random() * 10 - 5}deg)`;
+    });
+    skill.addEventListener('mouseout', () => {
+        skill.style.transform = 'scale(1) rotate(0deg)';
+    });
+});
+
+// Smooth scrolling for navigation links (if not already implemented)
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
     // Initialize particles.js
     particlesJS('particles-js', {
         particles: {
