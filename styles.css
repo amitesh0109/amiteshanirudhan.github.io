@@ -38,6 +38,22 @@ body {
     z-index: -1;
 }
 
+#root {
+    position: relative;
+    z-index: 1;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+    background-color: rgba(18, 18, 18, 0.7); /* Slightly transparent dark background */
+}
+
+/* Keep all your other existing styles */
+
 @keyframes gradientBG {
     0% {
         background-position: 0% 50%;
