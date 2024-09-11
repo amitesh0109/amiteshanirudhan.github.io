@@ -8,6 +8,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 </head>
+<button class="theme-toggle" id="themeToggle">🌓</button>
 <body>
     <div id="particles-js"></div>
     <canvas id="bg-canvas"></canvas>
@@ -23,11 +24,16 @@
             </nav>
         </header>
         <main>
-            <section id="home" class="hero">
-                <h1 class="glitch" data-text="Amitesh Anirudhan">Amitesh Anirudhan</h1>
-                <h2 class="subtitle">Project Engineer</h2>
-                <p id="tagline" class="tagline"></p>
-            </section>
+            
+<section id="home" class="hero">
+    <div class="parallax-bg"></div>
+    <div class="hero-content">
+        <h1 class="glitch" data-text="Amitesh Anirudhan">Amitesh Anirudhan</h1>
+        <h2 class="subtitle">Project Engineer</h2>
+        <p id="tagline" class="tagline"></p>
+    </div>
+</section>
+            <div class="content-wrapper">
             <section id="about">
                 <h2>About Me</h2>
                 <p>Driven individual with a year of experience in the corporate sector, specifically with handling data in the utility industry. Strong intuition on providing background and implementing technical solutions for KPI's related to various business processes.</p>
@@ -73,6 +79,21 @@
                     <span class="skill-tag">Probability</span>
                 </div>
             </section>
+                <!-- Add a projects section -->
+<section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+        <div class="project-card">
+            <img src="project1-image.jpg" alt="Project 1" class="project-image">
+            <div class="project-info">
+                <h3>Project 1</h3>
+                <p>Short description of the project</p>
+            </div>
+        </div>
+        <!-- Add more project cards as needed -->
+    </div>
+</section>
+            </div>
         </main>
     </div>
     <button id="back-to-top" title="Back to Top">↑</button>
