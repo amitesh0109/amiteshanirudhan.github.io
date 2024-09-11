@@ -93,7 +93,15 @@ h1, h2, h3 {
     justify-content: center;
     align-items: center;
     text-align: center;
+    position: relative; /* Change this from 'fixed' to 'relative' */
 }
+
+/* Remove or comment out this part in script.js
+window.addEventListener('scroll', () => {
+    const scrollPosition = window.pageYOffset;
+    document.querySelector('.hero').style.transform = `translateY(${scrollPosition * 0.5}px)`;
+});
+*/
 
 .glitch {
     font-size: 4rem;
