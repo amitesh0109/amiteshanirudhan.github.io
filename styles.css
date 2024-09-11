@@ -56,17 +56,15 @@ h1, h2, h3 {
     transform: scale(1.1);
 }
 
-.animate-in {
+.fade-in-section {
     opacity: 0;
     transform: translateY(20px);
-    animation: fadeInUp 0.6s forwards;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.fade-in-section.fade-in {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .job {
@@ -101,8 +99,18 @@ section {
     margin-bottom: 3rem;
 }
 
-section > * + * {
-    animation-delay: 0.2s;
+#hero {
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.ai-graphic {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 2rem;
+    background-color: var(--skill-bg);
+    border-radius: 50%;
+    overflow: hidden;
 }
 
 @media (max-width: 768px) {
