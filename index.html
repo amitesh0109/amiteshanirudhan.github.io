@@ -4,59 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amitesh Anirudhan - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
     <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div id="root"></div>
     <script type="text/babel">
         const App = () => {
             const [isDarkMode, setIsDarkMode] = React.useState(false);
+            
+            React.useEffect(() => {
+                document.body.classList.toggle('dark-mode', isDarkMode);
+            }, [isDarkMode]);
 
             return (
-                <div className={isDarkMode ? 'dark-mode' : ''}>
+                <div>
                     <header>
-                        <h1>Amitesh Anirudhan</h1>
-                        <button onClick={() => setIsDarkMode(!isDarkMode)}>
-                            {isDarkMode ? '🌞' : '🌙'}
+                        <h1 className="animate-in">Amitesh Anirudhan</h1>
+                        <button onClick={() => setIsDarkMode(!isDarkMode)} className="mode-toggle">
+                            {isDarkMode ? '☀️' : '🌙'}
                         </button>
                     </header>
                     <main>
-                        <section id="about">
+                        <section id="about" className="animate-in">
                             <h2>Project Engineer</h2>
                             <p>Driven individual with a year of experience in the corporate sector, specifically with handling data in the utility industry. Strong intuition on providing background and implementing technical solutions for KPI's related to various business processes.</p>
                             <p>As a mathematics major, a natural instinct of looking at problems in tech and business, through the lens of empirical reasoning and guesstimates has been my practice towards delivering an ideal output.</p>
                         </section>
-                        <section id="experience">
+                        <section id="experience" className="animate-in">
                             <h2>Experience</h2>
-                            <h3>Developer</h3>
-                            <p>Wipro | Bengaluru, India | May 2022 - May 2023</p>
-                            <ul>
-                                <li>Crunched data of an American utility company to provide insights on change of tenancy and supplier rates.</li>
-                                <li>Developed dashboards on Power BI and Tableau, showcasing relevant KPI's.</li>
-                                <li>Developed and converted Java code to Groovy for CIS migration projects.</li>
-                                <li>Conducted knowledge transfer sessions on Groovy.</li>
-                            </ul>
-                            <h3>Power BI Developer Intern</h3>
-                            <p>Techneith | Toronto, Canada | 2021 - 2022</p>
-                            <ul>
-                                <li>Developed budget and sales dashboards for clients.</li>
-                                <li>Handled and modelled required data for tasks.</li>
-                                <li>Interacted directly with clients for input and feedback.</li>
-                                <li>Conducted R&D on Power BI service and Windows server requirements.</li>
-                            </ul>
+                            <div className="job">
+                                <h3>Developer</h3>
+                                <p>Wipro | Bengaluru, India | May 2022 - May 2023</p>
+                                <ul>
+                                    <li>Crunched data of an American utility company to provide insights on change of tenancy and supplier rates.</li>
+                                    <li>Developed dashboards on Power BI and Tableau, showcasing relevant KPI's.</li>
+                                    <li>Developed and converted Java code to Groovy for CIS migration projects.</li>
+                                    <li>Conducted knowledge transfer sessions on Groovy.</li>
+                                </ul>
+                            </div>
+                            <div className="job">
+                                <h3>Power BI Developer Intern</h3>
+                                <p>Techneith | Toronto, Canada | 2021 - 2022</p>
+                                <ul>
+                                    <li>Developed budget and sales dashboards for clients.</li>
+                                    <li>Handled and modelled required data for tasks.</li>
+                                    <li>Interacted directly with clients for input and feedback.</li>
+                                    <li>Conducted R&D on Power BI service and Windows server requirements.</li>
+                                </ul>
+                            </div>
                         </section>
-                        <section id="skills">
+                        <section id="skills" className="animate-in">
                             <h2>Skills</h2>
-                            <p>Groovy, Java, Python, PL SQL, Power BI, Tableau, Excel, Linear algebra, Statistics, Probability</p>
-                        </section>
-                        <section id="contact">
-                            <h2>Contact</h2>
-                            <p>Email: amitesh.anirudhan29@gmail.com</p>
-                            <p>Phone: 9618508656</p>
-                            <p>Location: Hyderabad, Telengana, India</p>
+                            <div className="skills-container">
+                                {['Groovy', 'Java', 'Python', 'PL SQL', 'Power BI', 'Tableau', 'Excel', 'Linear algebra', 'Statistics', 'Probability'].map((skill, index) => (
+                                    <span key={index} className="skill-tag">{skill}</span>
+                                ))}
+                            </div>
                         </section>
                     </main>
                 </div>
