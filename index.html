@@ -6,13 +6,11 @@
     <title>Amitesh Anirudhan - Project Engineer</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 </head>
 <body>
     <div id="particles-js"></div>
     <canvas id="bg-canvas"></canvas>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="particles.js"></script>
     <div id="content">
         <header>
             <nav>
@@ -28,9 +26,9 @@
             <section id="home" class="hero">
                 <h1 class="glitch" data-text="Amitesh Anirudhan">Amitesh Anirudhan</h1>
                 <h2 class="subtitle">Project Engineer</h2>
-                <p class="tagline">Transforming data into insights, code into solutions.</p>
+                <p id="tagline" class="tagline"></p>
             </section>
-            <section id="about" class="card">
+            <section id="about">
                 <h2>About Me</h2>
                 <p>Driven individual with a year of experience in the corporate sector, specifically with handling data in the utility industry. Strong intuition on providing background and implementing technical solutions for KPI's related to various business processes.</p>
                 <p>As a mathematics major, a natural instinct of looking at problems in tech and business, through the lens of empirical reasoning and guesstimates has been my practice towards delivering an ideal output.</p>
@@ -38,7 +36,7 @@
             <section id="experience">
                 <h2>Experience</h2>
                 <div class="timeline">
-                    <div class="job card">
+                    <div class="job">
                         <h3>Developer</h3>
                         <p class="job-details">Wipro | Bengaluru, India | May 2022 - May 2023</p>
                         <ul>
@@ -48,7 +46,7 @@
                             <li>Conducted knowledge transfer sessions on Groovy.</li>
                         </ul>
                     </div>
-                    <div class="job card">
+                    <div class="job">
                         <h3>Power BI Developer Intern</h3>
                         <p class="job-details">Techneith | Toronto, Canada | 2021 - 2022</p>
                         <ul>
@@ -60,23 +58,24 @@
                     </div>
                 </div>
             </section>
-            <section id="skills" class="card">
+            <section id="skills">
                 <h2>Skills</h2>
                 <div class="skills-container">
-                    <span class="skill-tag"><i class="fas fa-code"></i> Groovy</span>
-                    <span class="skill-tag"><i class="fab fa-java"></i> Java</span>
-                    <span class="skill-tag"><i class="fab fa-python"></i> Python</span>
-                    <span class="skill-tag"><i class="fas fa-database"></i> PL SQL</span>
-                    <span class="skill-tag"><i class="fas fa-chart-bar"></i> Power BI</span>
-                    <span class="skill-tag"><i class="fas fa-table"></i> Tableau</span>
-                    <span class="skill-tag"><i class="fas fa-file-excel"></i> Excel</span>
-                    <span class="skill-tag"><i class="fas fa-calculator"></i> Linear algebra</span>
-                    <span class="skill-tag"><i class="fas fa-chart-line"></i> Statistics</span>
-                    <span class="skill-tag"><i class="fas fa-random"></i> Probability</span>
+                    <span class="skill-tag">Groovy</span>
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">PL SQL</span>
+                    <span class="skill-tag">Power BI</span>
+                    <span class="skill-tag">Tableau</span>
+                    <span class="skill-tag">Excel</span>
+                    <span class="skill-tag">Linear algebra</span>
+                    <span class="skill-tag">Statistics</span>
+                    <span class="skill-tag">Probability</span>
                 </div>
             </section>
         </main>
     </div>
+    <button id="back-to-top" title="Back to Top">↑</button>
     <script src="background.js"></script>
     <script src="script.js"></script>
 </body>
