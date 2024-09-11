@@ -22,9 +22,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
         observer.observe(section);
     });
 
-    // Parallax effect for hero section
-    window.addEventListener('scroll', () => {
-        const scrollPosition = window.pageYOffset;
-        document.querySelector('.hero').style.transform = `translateY(${scrollPosition * 0.5}px)`;
-    });
+/* Remove or comment out this part in script.js
+window.addEventListener('scroll', () => {
+    const scrollPosition = window.pageYOffset;
+    document.querySelector('.hero').style.transform = `translateY(${scrollPosition * 0.5}px)`;
+});
+*/
 });
