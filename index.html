@@ -10,6 +10,7 @@
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 </head>
 <body>
+    <div id="background-animation"></div>
     <div id="root"></div>
     <script type="text/babel">
         const App = () => {
@@ -27,7 +28,25 @@
 
             React.useEffect(() => {
                 window.addEventListener('scroll', handleScroll);
-                return () => window.removeEventListener('scroll', handleScroll);
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                        } else {
+                            entry.target.classList.remove('visible');
+                        }
+                    });
+                }, { threshold: 0.1 });
+
+                document.querySelectorAll('.fade-in-section').forEach(section => {
+                    observer.observe(section);
+                });
+
+                return () => {
+                    window.removeEventListener('scroll', handleScroll);
+                    observer.disconnect();
+                };
             }, []);
 
             return (
@@ -42,17 +61,17 @@
                         </ul>
                     </nav>
                     <main>
-                        <section id="home" className="hero">
+                        <section id="home" className="hero fade-in-section">
                             <h1>Amitesh Anirudhan</h1>
                             <h2>Project Engineer</h2>
                             <p>Transforming data into insights, code into solutions.</p>
                         </section>
-                        <section id="about">
+                        <section id="about" className="fade-in-section">
                             <h2>About Me</h2>
                             <p>Driven individual with a year of experience in the corporate sector, specifically with handling data in the utility industry. Strong intuition on providing background and implementing technical solutions for KPI's related to various business processes.</p>
                             <p>As a mathematics major, a natural instinct of looking at problems in tech and business, through the lens of empirical reasoning and guesstimates has been my practice towards delivering an ideal output.</p>
                         </section>
-                        <section id="experience">
+                        <section id="experience" className="fade-in-section">
                             <h2>Experience</h2>
                             <div className="timeline">
                                 <div className="timeline-item">
@@ -77,7 +96,7 @@
                                 </div>
                             </div>
                         </section>
-                        <section id="skills">
+                        <section id="skills" className="fade-in-section">
                             <h2>Skills</h2>
                             <div className="skills-container">
                                 {['Groovy', 'Java', 'Python', 'PL SQL', 'Power BI', 'Tableau', 'Excel', 'Linear algebra', 'Statistics', 'Probability'].map((skill, index) => (
