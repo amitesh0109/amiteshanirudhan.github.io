@@ -17,23 +17,44 @@
             
             React.useEffect(() => {
                 document.body.classList.toggle('dark-mode', isDarkMode);
+                
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('fade-in');
+                        }
+                    });
+                }, { threshold: 0.1 });
+
+                document.querySelectorAll('.fade-in-section').forEach(section => {
+                    observer.observe(section);
+                });
+
+                return () => observer.disconnect();
             }, [isDarkMode]);
 
             return (
                 <div>
                     <header>
-                        <h1 className="animate-in">Amitesh Anirudhan</h1>
+                        <h1>Amitesh Anirudhan</h1>
                         <button onClick={() => setIsDarkMode(!isDarkMode)} className="mode-toggle">
                             {isDarkMode ? '☀️' : '🌙'}
                         </button>
                     </header>
                     <main>
-                        <section id="about" className="animate-in">
+                        <section id="hero" className="fade-in-section">
+                            <div className="ai-graphic">
+                                {/* We'll add an SVG here */}
+                            </div>
                             <h2>Project Engineer</h2>
+                            <p>Transforming data into insights, code into solutions.</p>
+                        </section>
+                        <section id="about" className="fade-in-section">
+                            <h2>About Me</h2>
                             <p>Driven individual with a year of experience in the corporate sector, specifically with handling data in the utility industry. Strong intuition on providing background and implementing technical solutions for KPI's related to various business processes.</p>
                             <p>As a mathematics major, a natural instinct of looking at problems in tech and business, through the lens of empirical reasoning and guesstimates has been my practice towards delivering an ideal output.</p>
                         </section>
-                        <section id="experience" className="animate-in">
+                        <section id="experience" className="fade-in-section">
                             <h2>Experience</h2>
                             <div className="job">
                                 <h3>Developer</h3>
@@ -56,7 +77,7 @@
                                 </ul>
                             </div>
                         </section>
-                        <section id="skills" className="animate-in">
+                        <section id="skills" className="fade-in-section">
                             <h2>Skills</h2>
                             <div className="skills-container">
                                 {['Groovy', 'Java', 'Python', 'PL SQL', 'Power BI', 'Tableau', 'Excel', 'Linear algebra', 'Statistics', 'Probability'].map((skill, index) => (
